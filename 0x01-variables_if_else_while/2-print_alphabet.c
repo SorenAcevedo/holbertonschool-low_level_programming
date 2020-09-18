@@ -1,17 +1,18 @@
 #include <stdio.h>
 /**
-* main - while
+* main - while oricedure
 *
-*
+* Return: 0
 */
 int main(void)
 {
-        int letra = 97;
+	int letra = 97;
 
-        while (letra < 123) {
-                putchar(letra);
-                letra = letra +1;
-        }
+	while (letra < 123)
+	{
+		putchar(letra);
+		letra = letra + 1;
+	}
 	putchar('\n');
 	return (0);
 }
