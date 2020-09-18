@@ -10,7 +10,7 @@ int main(void)
 
 	while (letra < 123)
 	{
-		if (letra  == q || letra == e)
+		if (letra  == 101 || letra == 113)
 			letra = letra + 1;
 		else
 		{
