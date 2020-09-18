@@ -13,13 +13,18 @@ int main(void)
 	{
     		for (num_2 = 48; num_2 < 58; num_2++)
 		{
-      			putchar(num);
-      			putchar(num_2);
       			
-			if (num != 57 && num_" != 57)
-        		{
-          		putchar(',');
-          		putchar(' ');
+			if (num == 57 && num_2 == 57)
+			{
+				putchar(num);
+      				putchar(num_2);
+			}
+			else
+        		{	
+				putchar(num);
+      				putchar(num_2);
+          			putchar(',');
+          			putchar(' ');
         		}
     		}
 	}
