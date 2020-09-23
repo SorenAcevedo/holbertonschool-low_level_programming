@@ -1,10 +1,11 @@
 #include <stdio.h>
 /**
-* suma_multiplos - add multi
+* main - add multi
+* Return: 0
 */
-void suma_multiplos(void)
+int main(void)
 {
-	int i, j, n, suma, mul3, mul5;
+	int i, j, suma, mul3, mul5;
 
 	mul3 = 1024 / 3;
 	mul5 = 1024 / 5;
@@ -14,4 +15,5 @@ void suma_multiplos(void)
 	for (i = 5; i <= mul5; j += 5)
 		suma = suma + j;
 	printf("%d", suma);
+	return (0);
 }
