@@ -28,7 +28,7 @@ int main(void)
 	{
 		last_4 = (b + d) % 10000;
 
-		if (last_4 > 9999)
+		if ((b + d) > 9999)
 			first_digits = a + c + 1;
 		else
 			first_digits = a + c;
