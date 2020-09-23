@@ -24,7 +24,7 @@ int main(void)
 	c = suma / 10000; /* Número 92 en fibonacci sin últimos 4 digito */
 	d = suma % 10000; /* Últimos 4 digitos de número 92 fibonacci */
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 8; i++)
 	{
 		last_4 = (b + d) % 10000;
 
