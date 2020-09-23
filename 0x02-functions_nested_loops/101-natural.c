@@ -9,10 +9,9 @@ int main(void)
 {
 	int i, j, suma;
 
-	for (i = 0; i < 1024; i += 3)
-		suma = suma + i;
-	for (i = 5; i < 1024; j += 5)
-		suma = suma + j;
+	for (i = 0; i < 1024; i++)
+		if (i % 3 == 0 || i % 5 == 0)
+			suma += i;
 	printf("%d", suma);
 	return (0);
 }
