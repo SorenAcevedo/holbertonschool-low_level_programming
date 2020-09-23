@@ -1,11 +1,13 @@
 #include <stdio.h>
+
 /**
 * main - add multi
 * Return: 0
 */
+
 int main(void)
 {
-	int i, j;
+	int i, j, suma;
 
 	for (i = 0; i < 1024; i += 3)
 		suma = suma + i;
