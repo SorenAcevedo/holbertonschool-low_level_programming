@@ -16,7 +16,7 @@ int main(void)
 		j = k;
 		k = suma;
 
-		printf("%d", suma);
+		printf("%ld", suma);
 		if (i != 49)
 			printf(", ");
 	}
