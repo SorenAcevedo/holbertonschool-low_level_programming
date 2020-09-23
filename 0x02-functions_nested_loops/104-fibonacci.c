@@ -38,7 +38,7 @@ int main(void)
 		c = first_digits;
 		d = last_4;
 
-		printf("%lu%lu", first_digits, last_3);
+		printf("%lu%lu", first_digits, last_4);
 		if (i != 7)
 			printf(", ");
 	}
