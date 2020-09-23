@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	unsigned long j = 0, k = 1, suma = 0, a, b, c, d, first_digits, last_3;
+	unsigned long j = 0, k = 1, suma = 0, a, b, c, d, first_digits, last_4;
 
 	for (i = 0; i < 91; i++) /* Tipo "lu" abarca hasta el valor 92 en fibo*/
 	{
@@ -19,16 +19,16 @@ int main(void)
 		printf("%ld", suma);
 		printf(", ");
 	}
-	a = j / 1000; /* Número 91 en fibonacci sin últimos 3 digito*/
-	b = j % 1000; /* Últimos 3 digitos de fibonacci */
-	c = suma / 1000; /* Número 92 en fibonacci sin últimos 3 digito */
-	d = suma % 1000; /* Últimos 3 digitos de número 92 fibonacci */
+	a = j / 10000; /* Número 91 en fibonacci sin últimos 4 digitos*/
+	b = j % 10000; /* Últimos 4 digitos de fibonacci */
+	c = suma / 10000; /* Número 92 en fibonacci sin últimos 4 digito */
+	d = suma % 10000; /* Últimos 4 digitos de número 92 fibonacci */
 
 	for (i = 0; i < 7; i++)
 	{
-		last_3 = (b + d) % 1000;
+		last_4 = (b + d) % 10000;
 
-		if (last_3 > 999)
+		if (last_3 > 9999)
 			first_digits = a + c + 1;
 		else
 			first_digits = a + c;
@@ -36,7 +36,7 @@ int main(void)
 		a = c;
 		b = d;
 		c = first_digits;
-		d = last_3;
+		d = last_4;
 
 		printf("%lu%lu", first_digits, last_3);
 		if (i != 7)
