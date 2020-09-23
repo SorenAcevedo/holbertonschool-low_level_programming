@@ -9,7 +9,7 @@
 
 void print_times_table(int n)
 {
-	int i, j, k, cen = i / 100, dec, last;
+	int i, j, k, cen, dec, last;
 
 	if (n > 0 && n < 16)
 	{
@@ -47,13 +47,14 @@ void print_times_table(int n)
 					_putchar(dec + 48);
 					_putchar(last + 48);
 				}
-			}
-			if (j != n)
-				_putchar(10);
-			else
-			{
-				_putchar(',');
-				_putchar(' ');
+
+				if (j == n)
+					_putchar(10);
+				else
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 		}
 	}
