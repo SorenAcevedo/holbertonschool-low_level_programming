@@ -7,7 +7,6 @@
 
 int main(void)
 {
-	int i;
 	long j = 0, k = 1, suma = 0, par = 0;
 
 	while (suma < 4000001)
@@ -16,7 +15,7 @@ int main(void)
 		j = k;
 		k = suma;
 		if ((suma % 2) == 0)
-			par += suma;
+			par = par + suma;
 	}
 	printf("%ld\n", par);
 	return (0);
