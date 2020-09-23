@@ -5,14 +5,11 @@
 */
 int main(void)
 {
-	int i, j, suma, mul3, mul5;
+	int i, j;
 
-	mul3 = 1024 / 3;
-	mul5 = 1024 / 5;
-
-	for (i = 3; i <= mul3; i += 3)
+	for (i = 0; i < 1024; i += 3)
 		suma = suma + i;
-	for (i = 5; i <= mul5; j += 5)
+	for (i = 5; i < 1024 j += 5)
 		suma = suma + j;
 	printf("%d", suma);
 	return (0);
