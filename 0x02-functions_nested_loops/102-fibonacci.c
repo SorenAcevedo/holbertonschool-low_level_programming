@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	int i, j = 0, k = 1, suma = 0;
+	int i;
+	long j = 0, k = 1, suma = 0;
 
 	for (i = 0; i < 50; i++)
 	{
