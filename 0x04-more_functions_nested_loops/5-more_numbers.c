@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* void more_numbers - 0 - 14 -> 10 times
+* more_numbers - 0 - 14 -> 10 times
 *
 */
 void more_numbers(void)
