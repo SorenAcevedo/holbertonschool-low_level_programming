@@ -8,12 +8,10 @@
 char *cap_string(char *a)
 {
 	int i, j;
-	int separadores[] = {10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
+	int separadores[] = {9,10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 
 	for (i = 0; a[i] != 0; i++)
 	{
-		if (a[i] == 9)
-			a[i] = 32;
 		if (a[i] > 96 && a[i] < 123)
 			for (j = 0; j < 12; j++)
 			{
