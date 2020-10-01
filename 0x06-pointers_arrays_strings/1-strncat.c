@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _strcat - concatenate 2 str
+* _strncat - concatenate 2 str
 * @dest: str 1
 * @src: str 2
 * @n: n from src
