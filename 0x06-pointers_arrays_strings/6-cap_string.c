@@ -7,18 +7,22 @@
 
 char *cap_string(char *a)
 {
-	int i;
-	char b, c;
+	int i, j;
+	int separadores[] = {10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 
 	for (i = 0; a[i] != 0; i++)
 	{
-		b = a[i];
-		c = a[i - 1];
-
-		if (b == 9)
+		if (a[i] == 9)
 			a[i] = 32;
-		if (b > 96 && b < 123 && ((c == 32) || (c == 10) || (c == 46)))
-			a[i] = a[i] - 32;
+		if (a[i] > 96 && a[i] < 123)
+			for (j = 0; j < 12; j++)
+			{
+				if (a[i - 1] == separadores[j])
+				{
+					a[i] = a[i] - 32;
+					break;
+				}
+			}
 	}
 	return (a);
 }
