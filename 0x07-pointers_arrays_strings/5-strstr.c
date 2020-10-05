@@ -11,9 +11,6 @@
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i, j, k, stop = 0;
-	char *p;
-
-	p = 0;
 
 	for (k = 0; needle[k] != 0; k++)
 	{
@@ -25,10 +22,10 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (j == (k - 1))
 			{
-				p = &(haystack[i]);
+				return (&haystack[i]);
 				stop = 1;
 			}
 		}
 	}
-	return (p);
+	return (0);
 }
