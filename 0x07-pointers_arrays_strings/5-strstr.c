@@ -13,7 +13,7 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int i, j, k, stop = 0;
 	char *p;
 
-	p = '\0';
+	p = 0;
 
 	for (k = 0; needle[k] != 0; k++)
 	{
