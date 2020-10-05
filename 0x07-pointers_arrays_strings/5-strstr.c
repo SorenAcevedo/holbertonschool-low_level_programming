@@ -19,14 +19,17 @@ char *_strstr(char *haystack, char *needle)
 	{
 	}
 
-	for (i = 0; haystack[i] != 0 && stop == 0; i++)
+	if (k > 0)
 	{
-		for (j = 0; needle[j] == haystack[i + j] && needle[j] != 0; j++)
+		for (i = 0; haystack[i] != 0 && stop == 0; i++)
 		{
-			if (j == (k - 1))
+			for (j = 0; needle[j] == haystack[i + j] && needle[j] != 0; j++)
 			{
-				p = &(haystack[i]);
-				stop = 1;
+				if (j == (k - 1))
+				{
+					p = &(haystack[i]);
+					stop = 1;
+				}
 			}
 		}
 	}
