@@ -23,7 +23,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (j = 0; needle[j] == haystack[i + j] && needle[j] != 0; j++)
 		{
-			if (j == k && k > 0)
+			if (j == k)
 			{
 				p = &(haystack[i]);
 				stop = 1;
