@@ -31,7 +31,7 @@ int oposite(char *s, int i)
 
 	l = _strlen_recursion(s);
 	c = s[l - i];
-	
+
 	if (l == 0)
 		return (1);
 	else if (c != *s)
