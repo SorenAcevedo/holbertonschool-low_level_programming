@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			else
 				break;
 		}
-		if (i == argc - 1)
+		if (i == argc)
 			printf("%d\n", j);
 		else
 			printf("Error\n");
