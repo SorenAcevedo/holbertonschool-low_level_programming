@@ -1,5 +1,28 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
+
+/**
+* all_digits - vrify if all are digits
+* @s: string
+* Return: 0 if all digits, 1 if no
+*/
+
+int all_digits(char *s)
+{
+	int k = 0, l;
+
+	l = strlen(s);
+
+	if (s[0] == '-' || l > 1)
+		k = 1;
+	for (; k < l; k++)
+	{
+		if (s[k] < 48 || s[k] > 57)
+			return (1);
+	}
+	return (0);
+}
 
 /**
 * main - first parameter
@@ -16,22 +39,14 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if ((*argv[i] > 48 && *argv[i] < 58) || *argv[i] == '-')
-			{
-				if (atoi(argv[i]) == 0)
-				{
-					break;
-				}
-				else
-					j += atoi(argv[i]);
-			}
+			if (all_digits(argv[i]) == 0)
+				j += atoi(argv[i]);
 			else
 				break;
 		}
 		if (i == argc)
 		{
 			printf("%d\n", j);
-			return (0);
 		}
 		else
 		{
@@ -40,8 +55,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	else
-	{
 		printf("0\n");
-		return (0);
-	}
+	return (0);
 }
