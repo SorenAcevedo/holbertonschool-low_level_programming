@@ -20,8 +20,9 @@ int main(int argc, char *argv[])
 				j *= atoi(argv[i]);
 		}
 		printf("%d\n", j);
+		return (0);
 	}
 	else
 		printf("Error\n");
-	return (0);
+		return (1);
 }
