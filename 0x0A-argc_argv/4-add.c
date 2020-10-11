@@ -16,8 +16,15 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if ((*argv[i] > 47 && *argv[i] < 58) || *argv[i] == '-')
-				j += atoi(argv[i]);
+			if ((*argv[i] > 48 && *argv[i] < 58) || *argv[i] == '-')
+			{
+				if (atoi(argv[i]) == 0)
+				{
+					break;
+				}
+				else
+					j += atoi(argv[i]);
+			}
 			else
 				break;
 		}
