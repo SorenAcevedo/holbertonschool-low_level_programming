@@ -20,9 +20,6 @@ char *str_concat(char *s1, char *s2)
 
 	l = l1 + l2 + 1;
 
-	if (l == 0)
-		return ("");
-
 	p = malloc(l);
 
 	if (p == NULL)
