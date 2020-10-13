@@ -8,19 +8,17 @@
 
 char *_strdup(char *str)
 {
-	unsigned int i;
+	unsigned int j;
 	char *p;
 
 	/* primero asigno el tamaño de memoria con Malloc */
 
-	p = malloc(sizeof(str) + 1);
+	p = malloc(sizeof(str));
 
 	if (p == NULL || str == NULL)
 		return (0);
-	else
-	{
-		for (i = 0; str[i] != 0; i++)
-			p[i] = str[i];
-		return (p);
-	}
+
+	for (j = 0; j <= sizeof(str); j++)
+		p[j] = str[j];
+	return (p);
 }
