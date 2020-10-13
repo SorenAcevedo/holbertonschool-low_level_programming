@@ -13,12 +13,13 @@ char *_strdup(char *str)
 
 	/* primero asigno el tamaño de memoria con Malloc */
 
-	p = malloc((sizeof(str) + 1) * sizeof(char));
+	p = malloc(sizeof(str) + 1);
 
 	if (p == NULL || str == NULL)
 		return (0);
 
 	for (j = 0; j <= sizeof(str); j++)
 		p[j] = str[j];
+	p[j] = 0;
 	return (p);
 }
