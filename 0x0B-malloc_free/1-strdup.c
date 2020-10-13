@@ -15,10 +15,11 @@ char *_strdup(char *str)
 
 	p = malloc(sizeof(str) + 1);
 
-	if (p == NULL || str == NULL)
-		return (NULL);
-
-	for (j = 0; p[j] != 0; j++)
-		p[j] = str[j];
-	return (p);
+	if (p != NULL || sizeof(str) != 0)
+	{
+		for (j = 0; p[j] != 0; j++)
+			p[j] = str[j];
+		return (p);
+	}
+	return (NULL);
 }
