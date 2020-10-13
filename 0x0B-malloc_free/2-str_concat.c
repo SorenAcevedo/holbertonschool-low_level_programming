@@ -26,14 +26,14 @@ char *str_concat(char *s1, char *s2)
 
 	l = l1 + l2 + 1;
 
-	p = malloc(l);
+	p = malloc(sizeof(char) * l);
 
 	if (p == NULL)
 		return (NULL);
 
 	for (i = 0; i < l1; i++)
 		p[i] = s1[i];
-	for (j = 0; s2[j] != 0; j++)
+	for (j = 0; j < l2; j++)
 		p[i + j] = s2[j];
 	p[i + j] = 0;
 
