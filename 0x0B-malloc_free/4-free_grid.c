@@ -9,11 +9,11 @@
 
 void free_grid(int **grid, int height)
 {
-	int i, columnas;
-	/* Hallar el número de columnas*/
-	columnas = sizeof(grid) / height;
+	int i;
 
-	for (i = 0; i < columnas; i++)
+	/*Eliminar por filas*/
+
+	for (i = 0; i < height; i++)
 		free(grid[i]);
 	free(grid);
 }
