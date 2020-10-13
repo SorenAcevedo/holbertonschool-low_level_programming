@@ -12,7 +12,7 @@ int **alloc_grid(int width, int height)
 	int i, j, k, **m;
 
 	if (width == 0 || height == 0)
-		return (0);
+		return (NULL);
 	/* primero asigno el tamaño de memoria para las filas*/
 	m = (int **) malloc(height * sizeof(int *));
 	if (m == NULL)
