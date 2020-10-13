@@ -15,9 +15,15 @@ int **alloc_grid(int width, int height)
 		return (0);
 	/* primero asigno el tamaño de memoria para las filas*/
 	m = (int **) malloc(height * sizeof(int *));
+	if (m == NULL)
+		return (NULL);
 	/* segundo asigno el tamaño para las columnas, fila por fila*/
 	for (i = 0; i < height; i++)
+	{
 		m[i] = (int *) malloc(width * sizeof(int));
+		if (m[i] == NULL)
+			return (NULL);
+	}
 	/*Lleno las posiciones con 0*/
 	for (j = 0; j < height; j++)
 	{
