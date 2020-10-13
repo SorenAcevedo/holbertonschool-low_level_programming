@@ -9,7 +9,7 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, j, l, x, l1 = 0, l2 = 0;
+	unsigned int i, j, l, l1 = 0, l2 = 0;
 	char *p;
 
 	/* primero asigno el tamaño de memoria con Malloc */
