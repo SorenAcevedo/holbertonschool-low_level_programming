@@ -11,6 +11,8 @@ char *_strdup(char *str)
 	unsigned int i = 0, j;
 	char *p;
 
+	if (str == NULL)
+		return (NULL);
 	/* primero asigno el tamaño de memoria con Malloc */
 
 	while (str[i] != 0)
@@ -18,7 +20,7 @@ char *_strdup(char *str)
 
 	p = malloc(i + 1);
 
-	if (p == NULL || str == NULL)
+	if (p == NULL)
 		return (NULL);
 
 	for (j = 0; str[j] != 0; j++)
