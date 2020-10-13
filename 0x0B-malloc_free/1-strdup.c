@@ -17,7 +17,7 @@ char *_strdup(char *str)
 
 	if (p != NULL && str != NULL)
 	{
-		for (i = 0; i <= sizeof(str); i++)
+		for (i = 0; str[i] != 0; i++)
 			p[i] = str[i];
 	}
 	else
