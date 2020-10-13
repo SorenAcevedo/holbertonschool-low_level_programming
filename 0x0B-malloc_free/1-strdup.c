@@ -13,7 +13,7 @@ char *_strdup(char *str)
 
 	/* primero asigno el tamaño de memoria con Malloc */
 
-	p = malloc(sizeof(str));
+	p = malloc(sizeof(str) + 1);
 
 	if (p == NULL || str == NULL)
 		return (0);
