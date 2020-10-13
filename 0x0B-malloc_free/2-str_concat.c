@@ -13,10 +13,16 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 
 	/* primero asigno el tamaño de memoria con Malloc */
-	while (s1[l1] != 0)
-		l1++;
-	while (s2[l2] != 0)
-		l2++;
+	if (s1 != NULL)
+	{
+		while (s1[l1] != 0)
+			l1++;
+	}
+	if (s2 != NULL)
+	{
+		while (s2[l2] != 0)
+			l2++;
+	}
 
 	l = l1 + l2 + 1;
 
@@ -28,10 +34,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i < l1; i++)
 		p[i] = s1[i];
 	for (j = 0; s2[j] != 0; j++)
-	{
-		p[i] = s2[j];
-		i++;
-	}
+		p[i + j] = s2[j];
 	p[i + j] = 0;
 
 	return (p);
