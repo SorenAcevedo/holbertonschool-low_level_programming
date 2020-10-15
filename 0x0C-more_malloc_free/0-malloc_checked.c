@@ -5,6 +5,7 @@
 * @b: size to save
 * Return: void pointer
 */
+
 void *malloc_checked(unsigned int b)
 {
 	/* Crear un puntero Void */
@@ -12,6 +13,8 @@ void *malloc_checked(unsigned int b)
 
 	p = malloc(b);
 
-	/* Generar status 98 */
+	/* Generar status 98 exit */
+	if (p == NULL)
+		exit(98);
 	return (p);
 }
