@@ -1,11 +1,13 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
 * _calloc -  allocates memory for an array of nmemb elements of size
 * @nmemb: int
 * @size: int
-* Return: void pointer
+* Return: zero pointer
 */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *p;
