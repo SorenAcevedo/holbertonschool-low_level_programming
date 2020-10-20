@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
 * new_dog - create a new dog
@@ -27,16 +28,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 		if (dog->name == NULL || dog->owner == NULL)
 		{
-			if (dog->name != NULL && dog->owner == NULL)
-				free(dog->name);
+			free(dog->name);
+			free(dog->owner);
 			free(dog);
 			return (NULL);
 		}
 		for (i = 0; i < l1; i++)
 			dog->name[i] = name[i];
+		dog->name[i] = 0;
 		dog->age = age;
 		for (j = 0; j < l2; j++)
 			dog->owner[j] = owner[j];
+		dog->owner[j] = 0;
 		return (dog);
 	}
 	return (NULL);
