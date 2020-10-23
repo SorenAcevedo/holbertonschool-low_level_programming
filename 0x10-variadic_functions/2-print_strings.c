@@ -24,7 +24,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			if (cadena == NULL)
 				cadena = "nil";
 			if (separator != NULL && i != n - 1)
-				printf("%s%s ", cadena, separator);
+				printf("%s%s", cadena, separator);
 			else
 				printf("%s", cadena);
 		}
