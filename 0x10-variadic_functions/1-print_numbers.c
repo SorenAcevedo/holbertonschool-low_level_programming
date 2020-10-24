@@ -27,6 +27,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		/* Limpiar memoria */
 		va_end(argumentos);
-		putchar (10);
+		printf("\n");
 	}
 }
