@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <stdio.h>
-#define CR format[j]
 /**
 * print_all - print str's separted by any separator
 * @format: number of parameters
@@ -9,8 +8,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list argumentos;
-	int j = 0, i;
-	char c, *s;
+	int j = 0, len = 0;
+	char *s;
 
 	va_start(argumentos, format);
 
@@ -19,29 +18,29 @@ void print_all(const char * const format, ...)
 		switch (format[j])
 		{
 			case 'c':
-			{
-				c = va_arg(argumentos, int);
-				printf("%c", c);
+				printf("%c", va_arg(argumentos, int));
+				len = 1;
 				break;
-			}
 			case 'i':
-			{
-				i = va_arg(argumentos, int);
-				printf("%i", i);
+				printf("%i", va_arg(argumentos, int));
+				len = 1;
 				break;
-			}
 			case 's':
-			{
 				s = va_arg(argumentos, char*);
 				if (s == NULL)
 					s = "nil";
 				printf("%s", s);
+				len = 1;
 				break;
-			}
+			case 'f':
+				printf("%f", va_arg(argumentos, double));
+				len = 1;
+				break;
 			default:
+				len = 0;
 				break;
 		}
-		if (format[j + 1] != 0 && (CR == 99 || CR == 's' || CR == 'i'))
+		if (format[j + 1] && len == 1)
 			printf(", ");
 		j++;
 	}
