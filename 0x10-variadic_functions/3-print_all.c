@@ -42,8 +42,8 @@ void print_all(const char * const format, ...)
 				printf(", ");
 			j++;
 		}
-		putchar(10);
 		va_end(argumentos);
 		break;
 	}
+	putchar(10);
 }
