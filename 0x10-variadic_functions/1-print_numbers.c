@@ -25,8 +25,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			if (separator != NULL && i != (n - 1))
 				printf("%s", separator);
 		}
-		putchar (10);
 		/* Limpiar memoria */
 		va_end(argumentos);
+		putchar (10);
 	}
 }
