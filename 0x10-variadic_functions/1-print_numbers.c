@@ -22,9 +22,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			number = va_arg(argumentos, int);
 			if (separator != NULL && i != n - 1)
-				printf("%d%s ", number, separator);
+				printf("%d%s", number, separator);
 			else
-				printf("%d ", number);
+				printf("%d", number);
 		}
 		putchar (10);
 		/* Limpiar memoria */
