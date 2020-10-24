@@ -7,12 +7,12 @@
 
 void print_all(const char * const format, ...)
 {
+	va_list argumentos;
+	int j = 0, i;
+	char *s;
+
 	while (format)
 	{
-		va_list argumentos;
-		int j = 0, i;
-		char *s;
-
 		va_start(argumentos, format);
 		while (format[j] != 0)
 		{
