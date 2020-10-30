@@ -2,14 +2,17 @@
 #define LIST_HEADER
 
 /**
-*
-*
+* struct linklist - linked list
+* @str:value of the node
+* @len: len of str
+* @next: next node
 */
 
-typedef struct linklist {
+typedef struct linklist
+{
 	char *str;
 	int len;
-	struct linklist* next;
+	struct linklist *next;
 } list_t;
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
