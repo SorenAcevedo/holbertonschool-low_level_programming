@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
-* print_list - print elements in list
+* list_len - print elements in list
 * @h: pointer to struct
 * Return: number of elements
 */
