@@ -2,14 +2,14 @@
 #include "lists.h"
 
 /**
-* print_list - print elements in list
-* @h: pointer to struct
-* Return: number of elements
+* free_list - free memory space.
+* @head: pointer to struct, head node.
 */
 
 void free_list(list_t *head)
 {
 	list_t *next;
+
 	while (head)
 	{
 		next = head->next;
