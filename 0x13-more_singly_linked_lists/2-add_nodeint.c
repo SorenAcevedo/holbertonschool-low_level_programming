@@ -1,8 +1,9 @@
 #include "lists.h"
 
 /**
-* print_listint - print list with int
-* @h: pointer to head of the list
+* add_nodeint - add node at the beginning
+* @head: pointer to pointer head of the list
+* @n: int in the new struct
 * Return: return the number of nodes
 */
 
