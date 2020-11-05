@@ -8,8 +8,8 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int len = -1, dec = 0, i, j, pos;
-
+	int len = -1, i, j, pos;
+	unsigned int dec = 0;
 
 	while (b[len + 1])
 		len++;
@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 		for (j = 0; j < i; j++)
 			pos *= 2;
 
-		dec += (pos * (b[len] - 48)); 
+		dec += (pos * (b[len] - 48));
 	}
 	return (dec);
 }
