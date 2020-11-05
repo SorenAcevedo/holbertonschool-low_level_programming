@@ -9,21 +9,14 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask = 1, copy = n, con = 0;
+	int mask = 1;
 
-	/* Generar mascara de cantidad de dígitos*/
-	while (n > 0)
-	{
-		n >>= 1;
-		mask <<= 1;
-		if (con == index)
-		{
-			mask >>= 1;
-			if (mask & copy)
-				return (1);
-			return (0);
-		}
-		con++;
-	}
-	return (-1);
+	if (index > 63)
+		return (-1);
+
+	mask <<= index;
+	
+	if (mask & n)
+		return (1);
+	return (0);
 }
