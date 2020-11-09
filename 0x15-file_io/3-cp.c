@@ -19,7 +19,16 @@ int main(int ac, char **av)
 	}
 	fd1 = open(av[1], O_RDONLY);
 	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-
+	if (fd1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[1]);
+                exit(98);
+	}
+        if (fd2 == -1)
+        {
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
+		exit(99);
+	}
 	for (rfd1 = read(fd1, buffer, 1024); rfd1 > 0; rfd1 = read(fd1, buffer, 1024))
 	{
 		wfd2 = write(fd2, buffer, rfd1);
