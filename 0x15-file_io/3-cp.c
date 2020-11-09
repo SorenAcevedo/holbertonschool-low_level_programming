@@ -18,14 +18,19 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd1 = open(av[1], O_RDONLY);
-	rfd1 = read(fd1, buffer, 1024);
+	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+
+	for (rfd1 = read(fd1, buffer, 1024); rfd1 > 0; rfd1 = read(fd1, buffer, 1024))
+	{
+		wfd2 = write(fd2, buffer, rfd1);
+	}
+	
 	if (fd1 == -1 || rfd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[1]);
 		exit(98);
 	}
-	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	wfd2 = write(fd2, buffer, rfd1);
+
 	if (fd2 == -1 || wfd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
