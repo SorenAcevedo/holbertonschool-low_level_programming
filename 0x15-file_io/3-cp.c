@@ -17,7 +17,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	fd1 = open(av[1], O_RDONLY);
 	rfd1 = read(fd1, buffer, 1024);
 	if (fd1 == -1 || rfd1 == -1)
@@ -36,7 +35,7 @@ int main(int ac, char **av)
 	cl2 = close(fd2);
 	if (cl1 == -1 && cl2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", -1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", av[2]);
 		exit(100);
 	}
 	return (0);
