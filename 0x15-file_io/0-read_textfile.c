@@ -18,16 +18,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd != -1 && filename && buffer)
 	{
 		rfd = read(fd, buffer, letters);
-		if (rfd == -1)
-			return (0);
-
 		wfd = write(STDOUT_FILENO, buffer, rfd);
-		if (wfd == -1)
-			return (0);
-
 		close(fd);
-		free(buffer);
-		return (wfd);
+
+		if (wfd != -1 && rfd != -1)
+		{
+			free(buffer);
+			return (wfd);
+		}
 	}
+	free(buffer);
 	return (0);
 }
