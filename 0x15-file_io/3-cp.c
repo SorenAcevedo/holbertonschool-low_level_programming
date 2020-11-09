@@ -23,6 +23,8 @@ int main(int ac, char **av)
 	for (rfd1 = read(fd1, buffer, 1024); rfd1 > 0; rfd1 = read(fd1, buffer, 1024))
 	{
 		wfd2 = write(fd2, buffer, rfd1);
+		if (wfd2 == -1)
+			break;
 	}
 	
 	if (fd1 == -1 || rfd1 == -1)
