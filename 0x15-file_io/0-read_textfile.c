@@ -16,17 +16,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY);
 
-	if (fd != -1 && filename && buffer)
+	if (fd != -1 && filename != NULL && buffer != NULL)
 	{
 		rfd = read(fd, buffer, letters);
 		close(fd);
 		wfd = write(1, buffer, rfd);
 
 		if (rfd != -1 && wfd != -1)
+		{
+			free(buffer);
 			return (wfd);
-		else
-			return (0);
+		}
 	}
-	free(buffer);
 	return (0);
 }
