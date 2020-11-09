@@ -9,7 +9,7 @@
 
 int main(int ac, char **av)
 {
-	int fd1, fd2, rfd1, wfd2, cl1, cl2;
+	int fd1, fd2, rfd1, wfd2;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -19,16 +19,7 @@ int main(int ac, char **av)
 	}
 	fd1 = open(av[1], O_RDONLY);
 	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (fd1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[1]);
-                exit(98);
-	}
-        if (fd2 == -1)
-        {
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
-		exit(99);
-	}
+
 	for (rfd1 = read(fd1, buffer, 1024); rfd1 > 0; rfd1 = read(fd1, buffer, 1024))
 	{
 		wfd2 = write(fd2, buffer, rfd1);
@@ -47,11 +38,14 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
-	cl1 = close(fd1);
-	cl2 = close(fd2);
-	if (cl1 == -1 || cl2 == -1)
+	if (close(fd1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
+		exit(100);
+	}
+	if (close(fd2) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
 		exit(100);
 	}
 	return (0);
