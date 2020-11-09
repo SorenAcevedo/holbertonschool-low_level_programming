@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		if (wfd2 == -1)
 			break;
 	}
-	
+
 	if (fd1 == -1 || rfd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[1]);
