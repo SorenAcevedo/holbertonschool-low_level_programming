@@ -35,7 +35,7 @@ int main(int ac, char **av)
 	cl2 = close(fd2);
 	if (cl1 == -1 && cl2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s", av[2]);
 		exit(100);
 	}
 	return (0);
