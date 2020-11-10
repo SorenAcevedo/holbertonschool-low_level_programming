@@ -7,7 +7,7 @@
  * Return: 0 Always.
  */
 
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	int fd1, fd2, rfd1, wfd2, size = 1024;
 	char buf[1024];
