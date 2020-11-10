@@ -24,21 +24,21 @@ int main(int ac, char **av)
 		{
 			wfd2 = write(fd2, buf, rfd1);
 			if (wfd2 == -1)
-				dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]), exit(99);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
 
 	if (fd1 == -1 || rfd1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
 	if (fd2 == -1 || wfd2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 
 	if (close(fd1) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 
 	if (close(fd2) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 
 	return (0);
 }
