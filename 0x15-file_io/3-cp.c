@@ -3,14 +3,14 @@
 /**
  * main - copy text from a file to other..
  * @ac: number of arguments.
- * @av: arguments.	
+ * @av: arguments.
  * Return: 0 Always.
  */
 
 int main(int ac, char **av)
 {
-	int fd1, fd2, rfd1, wfd2;
-	char buffer[1024];
+	int fd1, fd2, rfd1, wfd2, size = 1024;
+	char buf[1024];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -20,9 +20,9 @@ int main(int ac, char **av)
 
 	if (fd1 != -1 && fd2 != -1)
 	{
-		for (rfd1 = read(fd1, buffer, 1024); rfd1 > 0; rfd1 = read(fd1, buffer, 1024))
+		for (rfd1 = read(fd1, buf, size); rfd1 > 0; rfd1 = read(fd1, buf, size))
 		{
-			wfd2 = write(fd2, buffer, rfd1);
+			wfd2 = write(fd2, buf, rfd1);
 			if (wfd2 == -1)
 				break;
 		}
