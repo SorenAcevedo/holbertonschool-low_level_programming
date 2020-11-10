@@ -17,6 +17,7 @@ int main(int ac, char **av)
 
 	fd1 = open(av[1], O_RDONLY);
 	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
 	if (fd1 != -1 && fd2 != -1)
 	{
 		for (rfd1 = read(fd1, buf, size); rfd1 > 0; rfd1 = read(fd1, buf, size))
@@ -28,7 +29,7 @@ int main(int ac, char **av)
 	}
 
 	if (fd1 == -1 || rfd1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]), exit(98);
 
 	if (fd2 == -1 || wfd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]), exit(99);
