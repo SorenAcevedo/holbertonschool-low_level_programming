@@ -8,7 +8,7 @@
  * Return: new node
  */
 
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
 
@@ -35,7 +35,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
  * Return: new node
  */
 
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+dlistint_t *add_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new, *temp;
 
@@ -74,7 +74,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	size_t i = 0;
 
 	if (idx == 0)
-		return (add_dnodeint(h, n));
+		return (add(h, n));
 
 	temp = *h;
 	while (i < (idx - 1))
@@ -86,7 +86,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 
 	if (i == idx - 1)
-		return (add_dnodeint_end(h, n));
+		return (add_end(h, n));
 
 	new = malloc(sizeof(dlistint_t));
 
