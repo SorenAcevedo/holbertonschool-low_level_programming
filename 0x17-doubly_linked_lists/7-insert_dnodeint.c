@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * add_dnodeint - add node at start
+ * add - add node at start
  * @head: pointer to head
  * @n: number of the new node
  * Return: new node
@@ -29,7 +29,7 @@ dlistint_t *add(dlistint_t **head, const int n)
 }
 
 /**
- * add_dnodeint_end - add node at the end
+ * add_end - add node at the end
  * @head: pointer to head
  * @n: number of the new node
  * Return: new node
@@ -85,7 +85,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		i++;
 	}
 
-	if (i == idx - 1)
+	if (i == idx - 1 && temp->next == NULL)
 		return (add_end(h, n));
 
 	new = malloc(sizeof(dlistint_t));
