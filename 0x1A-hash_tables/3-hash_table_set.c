@@ -29,6 +29,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		new->value = strdup(value);
 		new->key = strdup(key);
+		if (!new->value || !new->key)
+			return (0);
 		new->next = NULL;
 		ht->array[idx] = new;
 		return (1);
