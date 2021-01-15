@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * key-index - index calculation with the key
+ * key_index - index calculation with the key
  * @key: str
  * @size: size
  * Return: hash value
